@@ -18,12 +18,12 @@
       <h4>Style</h4>
     </div>
     <div class='col-md-2'>
-      <h4>Pints Lefts</h4>
+      <h4>Pints Left</h4>
     </div>
   </div>
   <div class='col-md-12'>
 
-<div *ngFor='let keg of kegs' (click)="goToBeerDetailPage(keg)">
+<div *ngFor='let keg of kegs | pintsLeftFilter' (click)="goToBeerDetailPage(keg)">
   <div class='col-md-3'>
     <span class='beer-link'>{{keg.name}}</span>
   </div>
