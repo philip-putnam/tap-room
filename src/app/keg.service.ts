@@ -11,4 +11,12 @@ export class KegService {
     return KEGS;
   }
 
+  getKegByBeerName(beerName: string){
+    for (var i = 0; i <= KEGS.length - 1; i++) {
+      if (KEGS[i].name === beerName) {
+        return KEGS[i];
+      }
+    }
+  }
+
 }
