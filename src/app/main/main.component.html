@@ -4,42 +4,56 @@
   <div class='col-md-12'>
     <div class='col-md-3'>
       <h4>Beer</h4>
+      <button (click)='setFilter("name", false)'>&#9650;</button>
+      <button (click)='setFilter("name", true)'>&#9660;</button>
     </div>
     <div class='col-md-3'>
       <h4>Brand</h4>
+      <button (click)='setFilter("brand", false)'>&#9650;</button>
+      <button (click)='setFilter("brand", true)'>&#9660;</button>
     </div>
     <div class='col-md-1'>
       <h4>Pint Price</h4>
+      <button (click)='setFilter("price", false)'>&#9650;</button>
+      <button (click)='setFilter("price", true)'>&#9660;</button>
     </div>
     <div class='col-md-1'>
       <h4>ABU</h4>
+      <button (click)='setFilter("alcoholContent", false)'>&#9650;</button>
+      <button (click)='setFilter("alcoholContent", true)'>&#9660;</button>
     </div>
     <div class='col-md-2'>
       <h4>Style</h4>
+      <button (click)='setFilter("style", false)'>&#9650;</button>
+      <button (click)='setFilter("style", true)'>&#9660;</button>
     </div>
     <div class='col-md-2'>
       <h4>Pints Left</h4>
+      <button (click)='setFilter("pintsLeft", false)'>&#9650;</button>
+      <button (click)='setFilter("pintsLeft", true)'>&#9660;</button>
     </div>
   </div>
-  <div class='col-md-12'>
+<div class='col-md-12'>
 
-<div *ngFor='let keg of kegs | pintsLeftFilter' (click)="goToBeerDetailPage(keg)">
-  <div class='col-md-3'>
-    <span class='beer-link'>{{keg.name}}</span>
+  <div *ngFor='let keg of kegs | pintsLeftFilter:filterType:reverse'>
+    <div class='col-md-3'>
+      <span class='beer-link' (click)="goToBeerDetailPage(keg)">{{keg.name}}</span>
+    </div>
+    <div class='col-md-3'>
+      {{keg.brand}}
+    </div>
+    <div class='col-md-1'>
+      ${{keg.price}}
+    </div>
+    <div class='col-md-1'>
+      {{keg.alcoholContent}}%
+    </div>
+    <div class='col-md-2'>
+      {{keg.style}}
+    </div>
+    <div class='col-md-2'>
+      {{keg.pintsLeft}}
+    </div>
   </div>
-  <div class='col-md-3'>
-    {{keg.brand}}
-  </div>
-  <div class='col-md-1'>
-    ${{keg.price}}
-  </div>
-  <div class='col-md-1'>
-    {{keg.alcoholContent}}%
-  </div>
-  <div class='col-md-2'>
-    {{keg.style}}
-  </div>
-  <div class='col-md-2'>
-    {{keg.pintsLeft}}
-  </div>
+
 </div>

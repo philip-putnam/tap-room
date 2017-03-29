@@ -11,6 +11,8 @@ import { KegService } from '../keg.service';
 })
 export class MainComponent implements OnInit {
   kegs: Keg[];
+  filterType: string = 'brand';
+  reverse: boolean = false;
 
   constructor(private router: Router, private kegService: KegService){}
 
@@ -21,4 +23,9 @@ export class MainComponent implements OnInit {
   goToBeerDetailPage(clickedKeg: Keg) {
     this.router.navigate(['beer', clickedKeg.name]);
   };
+
+  setFilter(filterType, reverse) {
+    this.filterType = filterType;
+    this.reverse = reverse;
+  }
 }
