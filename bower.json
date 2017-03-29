@@ -1,0 +1,21 @@
+{
+  "name": "tap-room",
+  "description": "App using Angular displaying available beers at a tap room",
+  "main": "",
+  "authors": [
+    "Philip Putnam <putnamp989@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
