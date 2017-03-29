@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Keg } from '../keg.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -7,7 +8,11 @@ import { Keg } from '../keg.model';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent {
+
+  constructor(private router: Router){}
+
   welcome = "Welcome to the Tap-Room!!"
+
   kegs: Keg[] = [
     new Keg("Apocalypse", "10 Barrel Brewery", 6.00, 6.5, "IPA"),
     new Keg("Joe", "10 Barrel Brewery", 6.00, 6.9, "IPA"),
@@ -27,4 +32,8 @@ export class MainComponent {
     new Keg("Dark Muse", "Worthy", 7.00, 10.1, "Imperial Stout"),
     new Keg("Stoker", "Worthy", 5.00, 6.6, "Red Ale"),
   ]
+
+  goToBeerDetailPage(clickedKeg: Keg) {
+    this.router.navigate(['beer', clickedKeg.name]);
+  };
 }
