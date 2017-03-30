@@ -7,40 +7,36 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
   pure: false
 })
 export class PintsLeftFilterPipe implements PipeTransform {
-  input: Keg[];
 
-  transform(kegs: FirebaseListObservable<any[]>, filterType, reverse) {
-    console.log(kegs);
-    kegs.subscribe(dataLastEmittedFromObserver => {this.input = (dataLastEmittedFromObserver);});
-    console.log(this.input);
+  transform(input: Keg[], filterType, reverse) {
 
-    // if (filterType === 'brand' || filterType === 'name' || filterType === 'style') {
-    //   if (!reverse) {
-    //     return input.sort(function(a, b){
-    //       if (a[filterType].toLowerCase() > b[filterType].toLowerCase()) {
-    //         return 1;
-    //       } else {
-    //         return -1;
-    //       }
-    //     });
-    //   } else {
-    //     return input.sort(function(a, b){
-    //       if (a[filterType].toLowerCase() > b[filterType].toLowerCase()) {
-    //         return -1;
-    //       } else {
-    //         return 1;
-    //       }
-    //     });
-    //   }
-    // };
-    //
-    // if (filterType === 'pintsLeft' || filterType === 'price' || filterType === 'alcoholContent') {
-    //   if (!reverse) {
-    //     return input.sort(function(a, b){return a[filterType]-b[filterType]});
-    //   } else {
-    //     return input.sort(function(a, b){return b[filterType]-a[filterType]});
-    //   }
-    // };
+    if (filterType === 'brand' || filterType === 'name' || filterType === 'style') {
+      if (!reverse) {
+        return input.sort(function(a, b){
+          if (a[filterType].toLowerCase() > b[filterType].toLowerCase()) {
+            return 1;
+          } else {
+            return -1;
+          }
+        });
+      } else {
+        return input.sort(function(a, b){
+          if (a[filterType].toLowerCase() > b[filterType].toLowerCase()) {
+            return -1;
+          } else {
+            return 1;
+          }
+        });
+      }
+    };
+
+    if (filterType === 'pintsLeft' || filterType === 'price' || filterType === 'alcoholContent') {
+      if (!reverse) {
+        return input.sort(function(a, b){return a[filterType]-b[filterType]});
+      } else {
+        return input.sort(function(a, b){return b[filterType]-a[filterType]});
+      }
+    };
 
     // if (filterType === 'brand') {
     //   if (!reverse) {

@@ -11,10 +11,6 @@ export class KegService {
   }
 
   getKegs() {
-    // console.log(this.kegs);
-    // console.log(this.kegs.subscribe(kegs => kegs));
-    // var temp = this.kegs.subscribe(kegs => console.log(kegs));
-    // this.kegs.subscribe(kegs => kegs.forEach(keg => {console.log('Keg:', keg)}));
     return this.kegs;
   }
 
