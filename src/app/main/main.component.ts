@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Keg } from '../keg.model';
 import { Router } from '@angular/router';
 import { KegService } from '../keg.service';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component({
   selector: 'app-main',
@@ -10,7 +11,7 @@ import { KegService } from '../keg.service';
   providers: [KegService]
 })
 export class MainComponent implements OnInit {
-  kegs: Keg[];
+  kegs: FirebaseListObservable<any[]>;
   filterType: string = 'brand';
   reverse: boolean = false;
 

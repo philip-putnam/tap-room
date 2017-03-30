@@ -1,0 +1,121 @@
+{ "kegs": [{
+    "name": "Apocalypse",
+    "brand": "10 Barrel Brewery",
+    "price": "6.00",
+    "alcoholContent": "6.5",
+    "style": "IPA",
+    "pintsLeft": "10"
+  }, {
+    "name": "Joe",
+    "brand": "10 Barrel Brewery",
+    "price": "6.00",
+    "alcoholContent": "6.9",
+    "style": "IPA",
+    "pintsLeft": "76"
+  }, {
+    "name": "PUB Beer",
+    "brand": "10 Barrel Brewery",
+    "price": "4.00",
+    "alcoholContent": "5.0",
+    "style": "Pilsner",
+    "pintsLeft": "128"
+  }, {
+    "name": "Admiration IPA",
+    "brand": "Alameda Brewery",
+    "price": "5.00",
+    "alcoholContent": "6.5",
+    "style": "IPA",
+    "pintsLeft": "1"
+  }, {
+    "name": "Blk Bear Stout",
+    "brand": "Alameda Brewery",
+    "price": "5.50",
+    "alcoholContent": "7.0",
+    "style": "Stout",
+    "pintsLeft": "8"
+  }, {
+    "name": "Klickitat Pale Ale",
+    "brand": "Alameda Brewery",
+    "price": "5.00",
+    "alcoholContent": "4.5",
+    "style": "Pale Ale",
+    "pintsLeft": "83"
+  }, {
+    "name": "Blonde IPA",
+    "brand": "pFriem Brewing",
+    "price": "5.00",
+    "alcoholContent": "6.2",
+    "style": "IPA",
+    "pintsLeft": "119"
+  }, {
+    "name": "Pilsner",
+    "brand": "pFriem Brewing",
+    "price": "4.00",
+    "alcoholContent": "4.9",
+    "style": "Pilzner",
+    "pintsLeft": "99"
+  }, {
+    "name": "Orbiter IPA",
+    "brand": "Ecliptic Brewing",
+    "price": "6.00",
+    "alcoholContent": "7.4",
+    "style": "IPA",
+    "pintsLeft": "100"
+  }, {
+    "name": "IRA",
+    "brand": "Double Mountain Brewery",
+    "price": "5.00",
+    "alcoholContent": "6.5",
+    "style": "IRA",
+    "pintsLeft": "34"
+  }, {
+    "name": "Vaporizer",
+    "brand": "Double Mountain Brewery",
+    "price": "5.00",
+    "alcoholContent": "6.0",
+    "style": "Pale Ale",
+    "pintsLeft": "67"
+  }, {
+    "name": "Prowell Springs",
+    "brand": "Crux Brewing",
+    "price": "4.50",
+    "alcoholContent": "5.5",
+    "style": "Lager",
+    "pintsLeft": "105"
+  }, {
+    "name": "Off Leash",
+    "brand": "Crux Brewing",
+    "price": "5.00",
+    "alcoholContent": "4.5",
+    "style": "IPA",
+    "pintsLeft": "88"
+  }, {
+    "name": "Gimmie Mo",
+    "brand": "Crux Brewing",
+    "price": "5.50",
+    "alcoholContent": "6.2",
+    "style": "IPA",
+    "pintsLeft": "34"
+  }, {
+    "name": "RPM IPA",
+    "brand": "Boneyard Brewing",
+    "price": "6.00",
+    "alcoholContent": "6.5",
+    "style": "IPA",
+    "pintsLeft": "16"
+  }, {
+    "name": "Dark Muse",
+    "brand": "Worthy",
+    "price": "7.00",
+    "alcoholContent": "10.1",
+    "style": "Imperial Stout",
+    "pintsLeft": "11"
+  }, {
+    "name": "Stoker",
+    "brand": "Worthy",
+    "price": "5.00",
+    "alcoholContent": "6.6",
+    "style": "Red Ale",
+    "pintsLeft": "128"
+  }]
+}

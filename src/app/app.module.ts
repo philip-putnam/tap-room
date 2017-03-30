@@ -9,6 +9,15 @@ import { EmployeeComponent } from './employee/employee.component';
 import { MainComponent } from './main/main.component';
 import { BeerDetailComponent } from './beer-detail/beer-detail.component';
 import { PintsLeftFilterPipe } from './pints-left-filter.pipe';
+import { masterFirebaseConfig } from './api-keys';
+import { AngularFireModule } from 'angularfire2';
+
+export const firebaseConfig = {
+  apiKey: masterFirebaseConfig.apiKey,
+  authDomain: masterFirebaseConfig.authDomain,
+  databaseURL: masterFirebaseConfig.databaseURL,
+  storageBucket: masterFirebaseConfig.storageBucket
+};
 
 @NgModule({
   declarations: [
@@ -22,7 +31,8 @@ import { PintsLeftFilterPipe } from './pints-left-filter.pipe';
     BrowserModule,
     FormsModule,
     HttpModule,
-    routing
+    routing,
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]

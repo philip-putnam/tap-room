@@ -35,7 +35,7 @@
   </div>
 <div class='col-md-12'>
 
-  <div *ngFor='let keg of kegs | pintsLeftFilter:filterType:reverse'>
+  <div *ngFor='let keg of kegs | pintsLeftFilter:filterType:reverse | async'>
     <div class='col-md-3'>
       <span class='beer-link' (click)="goToBeerDetailPage(keg)">{{keg.name}}</span>
     </div>

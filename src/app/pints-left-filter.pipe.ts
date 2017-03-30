@@ -1,42 +1,46 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { Keg } from './keg.model';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Pipe({
   name: 'pintsLeftFilter',
   pure: false
 })
 export class PintsLeftFilterPipe implements PipeTransform {
+  input: Keg[];
 
-  transform(input: Keg[], filterType, reverse) {
-    console.log(input[0][filterType]);
+  transform(kegs: FirebaseListObservable<any[]>, filterType, reverse) {
+    console.log(kegs);
+    kegs.subscribe(dataLastEmittedFromObserver => {this.input = (dataLastEmittedFromObserver);});
+    console.log(this.input);
 
-    if (filterType === 'brand' || filterType === 'name' || filterType === 'style') {
-      if (!reverse) {
-        return input.sort(function(a, b){
-          if (a[filterType].toLowerCase() > b[filterType].toLowerCase()) {
-            return 1;
-          } else {
-            return -1;
-          }
-        });
-      } else {
-        return input.sort(function(a, b){
-          if (a[filterType].toLowerCase() > b[filterType].toLowerCase()) {
-            return -1;
-          } else {
-            return 1;
-          }
-        });
-      }
-    };
-
-    if (filterType === 'pintsLeft' || filterType === 'price' || filterType === 'alcoholContent') {
-      if (!reverse) {
-        return input.sort(function(a, b){return a[filterType]-b[filterType]});
-      } else {
-        return input.sort(function(a, b){return b[filterType]-a[filterType]});
-      }
-    };
+    // if (filterType === 'brand' || filterType === 'name' || filterType === 'style') {
+    //   if (!reverse) {
+    //     return input.sort(function(a, b){
+    //       if (a[filterType].toLowerCase() > b[filterType].toLowerCase()) {
+    //         return 1;
+    //       } else {
+    //         return -1;
+    //       }
+    //     });
+    //   } else {
+    //     return input.sort(function(a, b){
+    //       if (a[filterType].toLowerCase() > b[filterType].toLowerCase()) {
+    //         return -1;
+    //       } else {
+    //         return 1;
+    //       }
+    //     });
+    //   }
+    // };
+    //
+    // if (filterType === 'pintsLeft' || filterType === 'price' || filterType === 'alcoholContent') {
+    //   if (!reverse) {
+    //     return input.sort(function(a, b){return a[filterType]-b[filterType]});
+    //   } else {
+    //     return input.sort(function(a, b){return b[filterType]-a[filterType]});
+    //   }
+    // };
 
     // if (filterType === 'brand') {
     //   if (!reverse) {
