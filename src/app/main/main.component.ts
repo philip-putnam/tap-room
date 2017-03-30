@@ -11,20 +11,22 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
   providers: [KegService]
 })
 export class MainComponent implements OnInit {
-  kegs: Keg[];
+  kegs: Keg[] = [];
   keg: Keg;
-  temp;
+  subscription;
   filterType: string = 'brand';
   reverse: boolean = false;
 
   constructor(private router: Router, private kegService: KegService){}
 
   ngOnInit(){
-    this.kegService.getKegs().subscribe(dataLastEmittedFromObserver => {
-      this.temp = dataLastEmittedFromObserver;
-      console.log(this.temp);
+    this.subscription = this.kegService.getKegs().subscribe(result => {
+      this.subscription = result;
+      this.subscription.forEach(keg => {
+        this.keg = new Keg(keg['name'], keg['brand'], keg['price'], keg['alcoholContent'], keg['style'], keg['pintsLeft']);
+        this.kegs.push(this.keg);
+      })
     });
-
   }
 
   goToBeerDetailPage(clickedKeg: Keg) {
