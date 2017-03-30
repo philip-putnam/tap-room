@@ -6,6 +6,9 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 @Injectable()
 export class KegService {
   kegs: FirebaseListObservable<any[]>;
+  keg: Keg;
+  subscription;
+
   constructor(private angularFire: AngularFire) {
     this.kegs = angularFire.database.list('kegs');
   }
@@ -14,12 +17,8 @@ export class KegService {
     return this.kegs;
   }
 
-  getKegByBeerName(beerName: string){
-    for (var i = 0; i <= KEGS.length - 1; i++) {
-      if (KEGS[i].name === beerName) {
-        return KEGS[i];
-      }
-    }
+  getKegById(kegId: string){
+    return this.angularFire.database.object('/kegs/' + kegId);
   }
 
 }

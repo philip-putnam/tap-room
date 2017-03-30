@@ -3,6 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { Keg } from '../keg.model';
 import { KegService } from '../keg.service';
+import { FirebaseListObservable } from 'angularfire2';
 
 @Component({
   selector: 'app-beer-detail',
@@ -11,8 +12,8 @@ import { KegService } from '../keg.service';
   providers: [KegService]
 })
 export class BeerDetailComponent implements OnInit {
-  beerName: string;
-  kegToDisplay: Keg;
+  kegId: string;
+  kegToDisplay;
 
   constructor(
     private route: ActivatedRoute,
@@ -22,9 +23,9 @@ export class BeerDetailComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
-      this.beerName = urlParameters['name'];
+      this.kegId = urlParameters['id'];
     });
-    this.kegToDisplay = this.kegService.getKegByBeerName(this.beerName);
+    this.kegToDisplay = this.kegService.getKegById(this.kegId);
   }
 
 }

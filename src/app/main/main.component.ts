@@ -20,17 +20,17 @@ export class MainComponent implements OnInit {
   constructor(private router: Router, private kegService: KegService){}
 
   ngOnInit(){
-    this.subscription = this.kegService.getKegs().subscribe(result => {
+    this.kegService.getKegs().subscribe(result => {
       this.subscription = result;
       this.subscription.forEach(keg => {
         this.keg = new Keg(keg['name'], keg['brand'], keg['price'], keg['alcoholContent'], keg['style'], keg['pintsLeft']);
         this.kegs.push(this.keg);
-      })
+      });
     });
   }
 
-  goToBeerDetailPage(clickedKeg: Keg) {
-    this.router.navigate(['beer', clickedKeg.name]);
+  goToBeerDetailPage(clickedKeg) {
+    this.router.navigate(['beer', clickedKeg.$key]);
   };
 
   setFilter(filterType, reverse) {
